@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Zeon/Documents/GitHub/MultMatrix/Matrix.h
+vector
+-
+iostream
+-
+
+C:/Users/Zeon/Documents/GitHub/MultMatrix/MatrixDef.h
+algorithm
+-
+Matrix.h
+C:/Users/Zeon/Documents/GitHub/MultMatrix/Matrix.h
+
+C:/Users/Zeon/Documents/GitHub/MultMatrix/main.cpp
+iostream
+-
+vector
+-
+algorithm
+-
+fstream
+-
+time.h
+-
+chrono
+-
+MatrixDef.h
+C:/Users/Zeon/Documents/GitHub/MultMatrix/MatrixDef.h
+
