@@ -9,7 +9,7 @@
 using namespace std;
 
 int randomNumber(unsigned int l = 1, unsigned int r = 100) { return (l + (rand() % (r - l + 1))); }
-int randomFillMatrix() { return (1 + rand() % 2); }
+int randomFillMatrix() { return (rand() % 2); }
 
 Matrix<unsigned long long>* matrixChainOrder(const vector<unsigned int>& sizeMat) {
     unsigned int n = sizeMat.size();
@@ -52,9 +52,11 @@ void task() {
     ifstream in;
     ofstream out;
     ofstream outData;
+    ofstream outData2;
     in.open("input_1.txt");
     out.open("output_1.txt");
     outData.open("data_M10.txt");
+    outData2.open("data_N10.txt");
     unsigned int l, r, n;
     in >> l >> r >> n;
 
@@ -63,9 +65,9 @@ void task() {
         in >> numMat[i];
     }
 
-    for (int r = 10; r <= 100; r += 10) {
-        outData << "M = " << r << endl << endl;
-
+    for (int r = 10; r <= 160; r += 10) {
+        //outData << "M = " << r << endl << endl;
+        outData << left << setw(4) << r;
         vector<Matrix<unsigned long long>*> vec_mat;
         for (int i = 0; i < n; i++) {
             vector<unsigned int> sizeMat;
@@ -104,12 +106,12 @@ void task() {
             out << "product Of The Matrix Chain (time: " << time2.count() << " ): " << endl;
             //out << product;
 
-            outData << left << setw(5) << numMat[i] << setw(10) << time1.count() << time2.count() << endl;
+            outData << left <<  setw(10) << setprecision(4) <<  time1.count() << setw(10) << setprecision(4)  << time2.count();
 
             sizeMat.clear();
             vec_mat.clear();
         }
-        outData << endl << endl;
+        outData << endl;
     }
 
 
