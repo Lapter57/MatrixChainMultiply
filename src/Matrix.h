@@ -39,7 +39,7 @@ public:
     }
 
     friend ostream& operator<< (ostream &out, Matrix<T>& matrix) {
-        out << "Matrix[ " << matrix.get_rows() << " , " << matrix.get_cols() << " ] :" << endl;
+        out << endl << "Matrix[ " << matrix.get_rows() << " , " << matrix.get_cols() << " ] :" << endl;
         for (unsigned int i = 0; i < matrix.get_rows(); i++) {
             for (unsigned int j = 0; j < matrix.get_cols(); j++) {
                 out << matrix(i, j) << " ";

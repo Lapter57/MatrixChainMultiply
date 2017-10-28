@@ -21,9 +21,9 @@ Matrix<T>::Matrix(const Matrix<T>& matrix) {
 
 template<typename T>
 Matrix<T>::~Matrix() {
-    /*    for(register int i = 0; i < rows; i++)
-    M[i].clear();
-    M.clear();*/
+    for(register int i = 0; i < rows; i++)
+        M[i].clear();
+    M.clear();
 }
 
 template <class T>
@@ -76,8 +76,8 @@ Matrix<T> Matrix<T>::operator*(const Matrix<T> &matrix) {
     Matrix result(rows, mCols);
 
     for (register int i = 0; i < rows; i++) {
-        for (register int j = 0; j<mCols; j++) {
-            for (register int k = 0; k<cols; k++) {
+        for (register int j = 0; j < mCols; j++) {
+            for (register int k = 0; k < cols; k++) {
                 result(i, j) += this->M[i][k] * matrix(k, j);
             }
         }
