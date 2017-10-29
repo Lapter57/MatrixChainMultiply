@@ -24,6 +24,8 @@ Matrix<T>::~Matrix() {
     for(register int i = 0; i < rows; i++)
         M[i].clear();
     M.clear();
+    rows = 0;
+    cols = 0;
 }
 
 template <class T>

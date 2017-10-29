@@ -69,8 +69,8 @@ void task() {
         //outData << "M = " << r << endl << endl;
         outData << left << setw(4) << r;
         vector<Matrix<unsigned long long>*> vec_mat;
+        vector<unsigned int> sizeMat;
         for (int i = 0; i < n; i++) {
-            vector<unsigned int> sizeMat;
             sizeMat.resize(numMat[i] + 1);
             for (auto && el : sizeMat) {
                 el = randomNumber(l, r);
@@ -108,7 +108,13 @@ void task() {
 
             outData << left <<  setw(10) << setprecision(4) <<  time1.count() << setw(10) << setprecision(4)  << time2.count();
 
+            delete optimalCost;
+            optimalCost = nullptr;
             sizeMat.clear();
+            for (auto && el : vec_mat) {
+                delete el;
+                el = nullptr;
+            }
             vec_mat.clear();
         }
         outData << endl;
