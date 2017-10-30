@@ -3,7 +3,7 @@ set output "graph_N.jpg"
 set grid
 set xlabel "N"  
 set ylabel "Time(ms)"
-set xrange [5:80]
+set xrange [5:40]
 set xtics 5
 set key outside bottom
 set style line 1 lt 2 lw 3
